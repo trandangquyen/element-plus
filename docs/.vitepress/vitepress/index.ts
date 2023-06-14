@@ -10,6 +10,7 @@ import '../../../packages/theme-chalk/src/dark/css-vars.scss'
 
 import './styles/css-vars.scss'
 import './styles/app.scss'
+import './styles/a2-vue-custom.scss'
 
 import 'uno.css'
 

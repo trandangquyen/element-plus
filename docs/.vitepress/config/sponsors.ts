@@ -1,4 +1,23 @@
-export const rightRichTextSponsors = []
+export const rightRichTextSponsors = [
+  {
+    name: 'BuildAdmin',
+    name_cn: 'BuildAdmin',
+    img: '/images/sponsors/buildadmin.png',
+    imgL: '/images/sponsors/buildadmin-l.png',
+    url: 'https://wonderful-code.gitee.io/?from=element-plus',
+    slogan: 'Vue3 opensource admin system',
+    slogan_cn: 'Vue3企业级开源后台管理系统',
+  },
+  {
+    name: 'bit',
+    name_cn: 'bit',
+    img: '/images/bit.svg',
+    imgL: '/images/bit-l.png',
+    url: 'https://bit.dev/?from=element-ui',
+    slogan: 'Share Code',
+    isDark: true, // dark theme
+  },
+]
 
 export const rightLogoSmallSponsors = [
   {
