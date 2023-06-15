@@ -320,3 +320,7 @@ $a2-purple-25: #050308;
     --el-button-disabled-bg-color: #{$a2-aqua-5};
     --el-button-disabled-border-color: #{$a2-aqua-5};
 }
+
+.el-table .el-table__cell {
+    padding: 10px 8px;
+}

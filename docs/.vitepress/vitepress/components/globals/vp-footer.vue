@@ -15,6 +15,9 @@ const homeLang = computed(() => homeLocale[lang.value])
   <footer class="footer" :class="{ 'is-home': isHome }">
     <div class="footer-main">
       <h4>{{ homeLang['10'] }}</h4>
+      <a href="https://applyto.com/" class="footer-main-link" target="_blank">
+        {{ homeLang['22'] }}
+      </a>
       <a
         href="https://github.com/element-plus/element-plus"
         class="footer-main-link"
