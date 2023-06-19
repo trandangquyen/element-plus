@@ -51,6 +51,9 @@ export const isActiveLink = (
   match?: boolean
 ) => {
   if (!match) return isActive(route, pathPattern)
+  if (route.component?.__name == 'index' && pathPattern == '/component/') {
+    return true
+  }
   const regex = new RegExp(pathPattern)
 
   return regex.test(normalize(`/${route.data.relativePath}`))

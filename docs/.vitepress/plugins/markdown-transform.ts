@@ -40,6 +40,12 @@ export function MarkdownTransform(): Plugin {
         ],
       }
 
+      if (componentId === 'index') {
+        append.scriptSetups = [
+          `const demos = import.meta.globEager('../examples/button/*.vue')`,
+        ]
+      }
+
       code = transformVpScriptSetup(code, append)
 
       if (compPaths.some((compPath) => id.startsWith(compPath))) {

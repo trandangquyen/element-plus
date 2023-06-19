@@ -17,7 +17,7 @@ export const useSidebar = () => {
     if (page.value.frontmatter.sidebar === false) return []
     const sidebars = getSidebarConfig(
       site.value.themeConfig.sidebars,
-      route.data.relativePath,
+      route.data.relativePath.replace('/index.md', '/component/button.md'),
       lang.value
     )
     return sidebars

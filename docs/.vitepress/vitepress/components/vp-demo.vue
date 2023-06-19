@@ -35,8 +35,12 @@ const formatPathDemos = computed(() => {
   const demos = {}
 
   Object.keys(props.demos).forEach((key) => {
-    demos[key.replace('../../examples/', '').replace('.vue', '')] =
-      props.demos[key].default
+    demos[
+      key
+        .replace('../../examples/', '')
+        .replace('../examples/', '')
+        .replace('.vue', '')
+    ] = props.demos[key].default
   })
 
   return demos
@@ -86,6 +90,46 @@ const copyCode = async () => {
       <ElDivider class="m-0" />
 
       <div class="op-btns">
+        <ElTooltip
+          :content="locale['edit-in-editor']"
+          :show-arrow="false"
+          :trigger="['hover', 'focus']"
+          :trigger-keys="[]"
+        >
+          <ElIcon
+            :size="16"
+            :aria-label="locale['edit-in-editor']"
+            tabindex="0"
+            role="link"
+            class="op-btn"
+            @click="onPlaygroundClick"
+            @keydown.prevent.enter="onPlaygroundClick"
+            @keydown.prevent.space="onPlaygroundClick"
+          >
+            <i-ri-flask-line />
+          </ElIcon>
+        </ElTooltip>
+        <ElTooltip
+          :content="locale['edit-on-github']"
+          :show-arrow="false"
+          :trigger="['hover', 'focus']"
+          :trigger-keys="[]"
+        >
+          <ElIcon
+            :size="16"
+            class="op-btn github"
+            style="color: var(--text-color-light)"
+          >
+            <a
+              :href="demoSourceUrl"
+              :aria-label="locale['edit-on-github']"
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              <i-ri-github-line />
+            </a>
+          </ElIcon>
+        </ElTooltip>
         <ElTooltip
           :content="locale['copy-code']"
           :show-arrow="false"
